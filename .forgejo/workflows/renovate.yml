@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3,11,17 * * *"
+
+name: Renovate scan
+
+jobs:
+  renovate-scan:
+    name: Scan Homelab Repo for updates
+    runs-on: docker
+    container: ghcr.io/renovatebot/renovate:44
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Start Renovate
+        env:
+          RENOVATE_CONFIG_FILE: config.json
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_COM_TOKEN }}
+          KEY_B64: ${{ secrets.RENOVATE_GIT_PRIVATE_KEY_B64 }}
+          LOG_LEVEL: debug
+        run: |
+          export RENOVATE_GIT_PRIVATE_KEY="$(echo "$KEY_B64" | base64 -d)"
+          renovate

@@ -1,0 +1,17 @@
+{
+  "autodiscover": true,
+  "autodiscoverFilter": [
+    "homelab/*"
+  ],
+  "cachePrivatePackages": true,
+  "endpoint": "https://forge.macopla.com",
+  "onboardingConfig": {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "local>homelab/renovate-config"
+    ]
+  },
+  "persistRepoData": true,
+  "platform": "forgejo",
+  "repositoryCache": "enabled"
+}

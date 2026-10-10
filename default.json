@@ -1,0 +1,35 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Europe/Paris",
+  "dependencyDashboard": true,
+  "minimumReleaseAge": "3 days",
+  "nix": {
+    "enabled": true
+  },
+  "pre-commit": {
+    "enabled": true
+  },
+  "extends": [
+    "config:best-practices",
+    ":automergeDigest",
+    "group:allNonMajor"
+  ],
+  "packageRules": [
+    {
+      "description": "Automerge patch et minor",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": false,
+    "schedule": [
+      "* * * * 0,6"
+    ]
+  }
+}
