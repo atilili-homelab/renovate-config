@@ -3,7 +3,6 @@
   "timezone": "Europe/Paris",
   "dependencyDashboard": true,
   "minimumReleaseAge": "3 days",
-  "prHourlyLimit": 0,
   "rebaseWhen": "behind-base-branch",
   "nix": {
     "enabled": true
@@ -13,10 +12,39 @@
   },
   "extends": [
     "config:best-practices",
-    ":automergeDigest",
-    "group:allNonMajor"
+    "group:allNonMajor",
+    "helpers:pinGitHubActionDigestsToSemver",
+    ":disableRateLimiting",
+    ":separateMultipleMajorReleases"
   ],
   "packageRules": [
+    {
+      "description": "Automerge pin",
+      "matchUpdateTypes": [
+        "pin",
+        "pinDigest"
+      ],
+      "minimumReleaseAge": null,
+      "automerge": true
+    },
+    {
+      "description": "Digests : pas d'automerge",
+      "matchUpdateTypes": [
+        "digest"
+      ],
+      "minimumReleaseAge": null,
+      "automerge": false
+    },
+    {
+      "description": "Automerge de mes propres images",
+      "matchUpdateTypes": [
+        "digest"
+      ],
+      "matchPackageNames": [
+        "forge.macopla.com/**"
+      ],
+      "automerge": true
+    },
     {
       "description": "Automerge patch et minor",
       "matchUpdateTypes": [
