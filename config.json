@@ -4,6 +4,7 @@
     "homelab/*"
   ],
   "cachePrivatePackages": true,
+  "detectHostRulesFromEnv": true,
   "endpoint": "https://forge.macopla.com",
   "onboardingConfig": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
