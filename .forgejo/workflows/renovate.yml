@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3,11,17 * * *"
+    - cron: "0 * * * *"
 
 name: Renovate scan
 
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Start Renovate
         env:
-          LOG_LEVEL: debug
+          # LOG_LEVEL: debug
           KEY_B64: ${{ secrets.RENOVATE_GIT_PRIVATE_KEY_B64 }}
           RENOVATE_CONFIG_FILE: config.json
           RENOVATE_GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_COM_TOKEN }}
