@@ -14,5 +14,6 @@
   },
   "persistRepoData": true,
   "platform": "forgejo",
-  "repositoryCache": "enabled"
+  "repositoryCache": "enabled",
+  "semanticCommits": "enabled"
 }
