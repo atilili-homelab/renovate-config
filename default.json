@@ -19,6 +19,16 @@
   ],
   "packageRules": [
     {
+      "description": "Automerge des flake.lock",
+      "matchManagers": [
+        "nix"
+      ],
+      "matchUpdateTypes": [
+        "lockFileMaintenance"
+      ],
+      "automerge": true
+    },
+    {
       "description": "Automerge pin",
       "matchUpdateTypes": [
         "pin",
@@ -58,8 +68,9 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": false,
+    "minimumReleaseAge": null,
     "schedule": [
-      "* * * * 0,6"
+      "* 4 * * 6"
     ]
   }
 }
