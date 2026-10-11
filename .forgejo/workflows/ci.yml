@@ -5,11 +5,24 @@ on:
 name: Test
 
 jobs:
+  renovate-validate:
+    name: Validate with bot version
+    runs-on: docker
+    container: renovate/renovate:44.150.1@sha256:4355df2a8b79b7d3095c0fc4e4ea6aae958c44aeb134c4d5033e002832517ae3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Validate global config
+        run: renovate-config-validator --strict config.json
+      - name: Validate preset
+        run: renovate-config-validator --strict --no-global default.json
+
   pre-commit:
     name: Pre-commit
     runs-on: nix
     env:
       NIX_CONFIG: "experimental-features = nix-command flakes"
+      SKIP: renovate-global-config,renovate-preset
     steps:
       - name: Install nodejs
         run: nix profile add nixpkgs#nodejs-slim
