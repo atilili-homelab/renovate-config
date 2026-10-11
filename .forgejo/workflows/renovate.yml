@@ -9,7 +9,7 @@ jobs:
   renovate-scan:
     name: Scan Homelab Repo for updates
     runs-on: docker
-    container: ghcr.io/renovatebot/renovate:44@sha256:11431b10c52c306bb280171f80d409e1fb482e5a61a845cfef93f34b4d649d5d
+    container: renovate/renovate:44.150.1@sha256:4355df2a8b79b7d3095c0fc4e4ea6aae958c44aeb134c4d5033e002832517ae3
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
