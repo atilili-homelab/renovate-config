@@ -3,6 +3,7 @@
   "timezone": "Europe/Paris",
   "dependencyDashboard": true,
   "minimumReleaseAge": "3 days",
+  "prHourlyLimit": 0,
   "nix": {
     "enabled": true
   },
