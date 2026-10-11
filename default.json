@@ -4,6 +4,7 @@
   "dependencyDashboard": true,
   "minimumReleaseAge": "3 days",
   "prHourlyLimit": 0,
+  "rebaseWhen": "behind-base-branch",
   "nix": {
     "enabled": true
   },
