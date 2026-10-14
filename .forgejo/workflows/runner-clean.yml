@@ -1,0 +1,20 @@
+# job hebdo de nettoyage
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * 0"
+
+name: Runner cleanup
+
+jobs:
+  prune:
+    name: Prune docker engine
+    runs-on: docker
+    container:
+      image: docker:cli
+    steps:
+      - name: Prune build cache and unused images
+        run: |
+          docker builder prune -af
+          docker image prune -af
+          docker system df
