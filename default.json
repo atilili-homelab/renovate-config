@@ -19,6 +19,18 @@
   ],
   "packageRules": [
     {
+      "description": "collection homelab.base : tags lus par l'api de la forge",
+      "matchPackageNames": [
+        "ssh://git@forge.macopla.com:2222/homelab/ansible.git"
+      ],
+      "overrideDatasource": "forgejo-tags",
+      "overridePackageName": "homelab/ansible",
+      "registryUrls": [
+        "https://forge.macopla.com"
+      ],
+      "minimumReleaseAge": null
+    },
+    {
       "description": "Automerge des flake.lock",
       "matchManagers": [
         "nix"
