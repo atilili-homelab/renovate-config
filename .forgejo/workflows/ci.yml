@@ -7,7 +7,7 @@ name: Test
 jobs:
   renovate-validate:
     name: Validate with bot version
-    runs-on: docker
+    runs-on: podman-nix
     container: renovate/renovate:44.150.1@sha256:4355df2a8b79b7d3095c0fc4e4ea6aae958c44aeb134c4d5033e002832517ae3
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
 
   pre-commit:
     name: Pre-commit
-    runs-on: nix
+    runs-on: podman-nix
     env:
       NIX_CONFIG: "experimental-features = nix-command flakes"
       SKIP: renovate-global-config,renovate-preset
