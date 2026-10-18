@@ -17,6 +17,18 @@
     ":disableRateLimiting",
     ":separateMultipleMajorReleases"
   ],
+  "customManagers": [
+    {
+      "description": "Versions annotées : # renovate: datasource=… depName=… [registryUrl=…] [extractVersion=…] au-dessus de la variable",
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)(?: registryUrl=(?<registryUrl>\\S+))?(?: extractVersion=(?<extractVersion>\\S+))?\\s+[\\w.-]+: \"?(?<currentValue>[^\"\\s]+)\"?"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "description": "collection homelab.base : tags lus par l'api de la forge",
