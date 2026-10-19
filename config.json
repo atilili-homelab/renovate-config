@@ -1,7 +1,8 @@
 {
   "autodiscover": true,
   "autodiscoverFilter": [
-    "homelab/*"
+    "homelab/*",
+    "yoann/*"
   ],
   "cachePrivatePackages": true,
   "detectHostRulesFromEnv": true,
