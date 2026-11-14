@@ -6,6 +6,7 @@
   "minimumReleaseAgeBehaviour": "timestamp-optional",
   "rebaseWhen": "conflicted",
   "platformAutomerge": false,
+  "automergeStrategy": "rebase",
   "nix": {
     "enabled": true
   },
