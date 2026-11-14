@@ -2,7 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "timezone": "Europe/Paris",
   "dependencyDashboard": {
-    "enabled": true
+    "enabled": true,
+    "pinned": true,
+    "osvVulnerabilitySummary": "unresolved"
   },
   "minimumReleaseAge": "3 days",
   "minimumReleaseAgeBehaviour": "timestamp-optional",
