@@ -5,6 +5,7 @@
   "minimumReleaseAge": "3 days",
   "minimumReleaseAgeBehaviour": "timestamp-optional",
   "rebaseWhen": "conflicted",
+  "platformAutomerge": false,
   "nix": {
     "enabled": true
   },
