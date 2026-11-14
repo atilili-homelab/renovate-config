@@ -47,16 +47,6 @@ repos:
 
   - repo: local
     hooks:
-      - id: renovate-global-config
-        name: Validate Renovate global config
-        entry: renovate-config-validator --strict
-        language: system
-        files: ^config\.json$
-      - id: renovate-preset
-        name: Validate Renovate preset
-        entry: renovate-config-validator --strict --no-global
-        language: system
-        files: ^default\.json$
       - id: forgejo-runner-validate
         name: Validate Forgejo Actions files
         entry: forgejo-runner validate --directory .

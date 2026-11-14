@@ -25,7 +25,7 @@ jobs:
     name: Pre-commit
     runs-on: nixos
     env:
-      SKIP: gitleaks-system,renovate-global-config,renovate-preset
+      SKIP: gitleaks-system
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

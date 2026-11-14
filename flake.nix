@@ -17,7 +17,6 @@
         pre-commit
         gitleaks
         forgejo-runner
-        renovate
       ];
   in {
     devShells = forAllSystems (pkgs: {
