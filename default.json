@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "timezone": "Europe/Paris",
-  "dependencyDashboard": true,
+  "dependencyDashboard": {
+    "enabled": true
+  },
   "minimumReleaseAge": "3 days",
   "minimumReleaseAgeBehaviour": "timestamp-optional",
   "rebaseWhen": "conflicted",
