@@ -4,7 +4,7 @@
   "dependencyDashboard": true,
   "minimumReleaseAge": "3 days",
   "minimumReleaseAgeBehaviour": "timestamp-optional",
-  "rebaseWhen": "behind-base-branch",
+  "rebaseWhen": "conflicted",
   "nix": {
     "enabled": true
   },
