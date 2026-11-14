@@ -2,5 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>homelab/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "description": "Renovate publie plusieurs versions par jour : une mise à jour par semaine suffit",
+      "matchPackageNames": [
+        "renovate/renovate"
+      ],
+      "schedule": [
+        "* 19 * * 5"
+      ]
+    }
   ]
 }
