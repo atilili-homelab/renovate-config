@@ -12,7 +12,6 @@
   },
   "extends": [
     "config:best-practices",
-    "group:allNonMajor",
     "helpers:pinGitHubActionDigestsToSemver",
     ":disableRateLimiting",
     ":separateMultipleMajorReleases"
