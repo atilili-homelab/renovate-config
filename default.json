@@ -3,6 +3,7 @@
   "timezone": "Europe/Paris",
   "dependencyDashboard": true,
   "minimumReleaseAge": "3 days",
+  "minimumReleaseAgeBehaviour": "timestamp-optional",
   "rebaseWhen": "behind-base-branch",
   "nix": {
     "enabled": true
@@ -86,6 +87,22 @@
       ],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
+    },
+    {
+      "description": "Registres sans date de publication : pas de délai possible, passage hebdomadaire à la place",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/**",
+        "lscr.io/**",
+        "quay.io/**",
+        "gcr.io/**",
+        "codeberg.org/**"
+      ],
+      "schedule": [
+        "* 19 * * 5"
+      ]
     }
   ],
   "lockFileMaintenance": {
