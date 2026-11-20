@@ -48,6 +48,18 @@
       "minimumReleaseAge": null
     },
     {
+      "description": "linuxserver : -lsNNN est un numéro de build, pas une variante ; le versioning docker exige un suffixe identique et bloquait toute mise à jour",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "linuxserver/**",
+        "lscr.io/linuxserver/**"
+      ],
+      "matchCurrentValue": "/-ls\\d+$/",
+      "versioning": "regex:^v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:[.-]r?(?<build>\\d+))?-ls(?<revision>\\d+)$"
+    },
+    {
       "description": "Automerge des flake.lock",
       "matchManagers": [
         "nix"
