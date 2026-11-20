@@ -12,7 +12,7 @@ jobs:
   renovate-validate:
     name: Validate with bot version
     runs-on: podman-nix
-    container: renovate/renovate:44.239.1@sha256:7dba1a3b916a2cf302ba0df458ddcc8fcbac3c92d0fe9882ac13ba0363de656b
+    container: renovate/renovate:44.257.4@sha256:99cd0d7e2a6251b3dade497b1976056b3bcc3aa6738baff4810ab0f3800f4c8f
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
