@@ -7,6 +7,10 @@
   "cachePrivatePackages": true,
   "detectHostRulesFromEnv": true,
   "endpoint": "https://forge.macopla.com",
+  "allowedCommands": [
+    "^nix --extra-experimental-features 'nix-command flakes' run \\.#write-flake$",
+    "^nix --extra-experimental-features 'nix-command flakes' flake lock$"
+  ],
   "onboardingConfig": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
